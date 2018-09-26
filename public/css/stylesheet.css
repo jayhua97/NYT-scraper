@@ -1,0 +1,80 @@
+body {
+    position: relative;
+    background-color: #343a40;
+}
+
+a {
+    text-decoration: none;
+    background-color: none;
+}
+
+textarea {
+    resize: none;
+}
+
+#nav-button {
+    margin-left: 20px;
+}
+
+.navbar {
+    background-color: black
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.jumbotron {
+    background-color: #4b4e51;
+    margin: 0 auto;
+    text-align: center;
+    height: 300px;
+    color: white;
+    border-radius: 0;
+}
+
+.card {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    width: 95%;
+}
+
+.card-header {
+    background-color: lightgrey;
+    border: none;
+    font-weight: bold;
+}
+
+li {
+    display: inline-block;
+    position: relative;
+    list-style-type: none;
+    /* width: 90%; */
+}
+
+ul {
+    padding: 0;
+}
+
+.list-container {
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+
+.delete-note-btn {
+    display: inline-block;
+    position: relative;
+    float: right;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+}

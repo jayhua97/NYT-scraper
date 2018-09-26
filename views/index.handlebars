@@ -1,0 +1,28 @@
+<div>
+    <div class="jumbotron">
+        <h1 class="display-4 jumbo-header">NYT Scraper</h1>
+        <p class="lead">Scrape and save articles from the New York Times!</p>
+
+    </div>
+    <div id="scraped-container">
+        {{#if article}}
+        {{#each article}}
+            <div class="card" data-id="{{this._id}}">
+                <h5 class="card-header"><a href="{{link}}">{{title}}</a></h5>
+                <div class="card-body">
+                    {{!-- <h5 class="card-title">Special title treatment</h5> --}}
+                    <p class="card-text">{{summary}}</p>
+                    <button class="btn btn-outline-primary save-btn" data-id="{{_id}}">Save Article</button>
+                </div>
+            </div>
+        {{/each}}
+        {{/if}}
+        {{#unless article}}
+            <div class="card">
+                <h5 class="card-header">No Scraped Articles</h5>
+            </div>
+        {{/unless}}
+    </div>
+</div>
+
+{{!-- <script src="/js/app.js"></script> --}}

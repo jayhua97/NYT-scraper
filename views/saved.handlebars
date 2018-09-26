@@ -1,0 +1,52 @@
+    <div class="jumbotron">
+        <h1 class="display-4 jumbo-header">Saved Articles</h1>
+        <p class="lead">These are your saved articles!</p>
+
+    </div>
+{{#each saved}}
+<div class="main">
+    <div class="card" data-id="{{this._id}}">
+        <h5 class="card-header"><a href="{{link}}">{{title}}</a></h5>
+        <div class="card-body">
+            <p class="card-text">{{summary}}</p>
+            <button type="button" class="btn btn-primary" id="add-note-btn" data-toggle="modal" data-target="#noteModal{{_id}}" data-id="{{_id}}">Add Notes</button>
+            <button class="btn btn-outline-danger delete-btn" data-id="{{_id}}">Delete Article</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="noteModal{{_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Notes for Article: {{_id}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="note-list">
+                        {{#if this.notes}}
+                            {{#each this.notes}}
+                                <div class="list-container">
+                                <li>{{this.body}}</li>
+                                <span><button class="btn btn-danger delete-note-btn" data-id="{{_id}}">x</button></span>
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                    </ul>
+                    <textarea placeholder="Add Note Here" rows="4" cols="62" id="note-text{{this._id}}"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary save-note-btn" data-id="{{_id}}">Save Note</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{#unless saved}}
+    <div class="card">
+        <h5 class="card-header">No Saved Articles</h5>
+    </div>
+{{/unless}}
