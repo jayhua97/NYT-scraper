@@ -17,6 +17,8 @@ var db = require("./models")
 // Initialize Express
 var app = express();
 
+var PORT = process.env.PORT || 3000;
+
 // Set up Express to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -213,6 +215,6 @@ app.delete("/saved/:id", function(req, res) {
     })
 })
 // Set the app to listen on port 3000
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log("App running on port 3000!");
 });
